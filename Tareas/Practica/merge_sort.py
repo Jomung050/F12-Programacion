@@ -1,16 +1,15 @@
 def merge_sort(lista):
     if len(lista) > 1:
-           return lista
-    mid = len(lista) // 2
-    L = lista[:mid] 
-    R = lista[mid:]
+        mid = len(lista) // 2
+        L = lista[:mid]
+        R = lista[mid:]
 
-    merge_sort(L)
-    merge_sort(R)
+        merge_sort(L)
+        merge_sort(R)
 
-    i = j = k = 0
+        i = j = k = 0
 
-    while i < len(L) and j < len(R):
+        while i < len(L) and j < len(R):
             if L[i] < R[j]:
                 lista[k] = L[i]
                 i += 1
@@ -19,12 +18,16 @@ def merge_sort(lista):
                 j += 1
             k += 1
 
-    while i < len(L):
+        while i < len(L):
             lista[k] = L[i]
             i += 1
             k += 1
 
-    while j < len(R):
+        while j < len(R):
             lista[k] = R[j]
             j += 1
             k += 1
+
+lista = [38, 27, 43, 3, 9, 82, 10]
+merge_sort(lista)
+print("Lista ordenada:", lista)
